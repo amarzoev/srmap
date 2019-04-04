@@ -25,7 +25,7 @@ pub mod handle {
         V: Clone + Eq + std::fmt::Debug + Hash + evmap::ShallowCopy,
         M: Clone,
     {
-        pub fn clone_new_user(&mut self) -> (usize, Handle<K, V, M>, Handle<K, V, M>) {
+        pub fn clone_new_user(&self) -> (usize, Handle<K, V, M>, Handle<K, V, M>) {
             let umap = Arc::new(RwLock::new(HashMap::new()));
             let mut new_handle = Handle {
                 handle: self.handle.clone(),
